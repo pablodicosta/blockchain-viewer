@@ -1,0 +1,29 @@
+{
+  "name": "pablo-diaz-coding-challenge",
+  "version": "1.0.0",
+  "description": "Nuri coding challenge",
+  "repository": "git@github.com:NuriCareers/Pablo-Diaz-Coding-Challenge.git",
+  "author": "pablodicosta",
+  "license": "MIT",
+  "private": "true",
+  "engines": {
+    "node": "16.*",
+    "yarn": "1.22.*"
+  },
+  "workspaces": {
+    "packages": [
+      "frontend",
+      "backend"
+    ]
+  },
+  "scripts": {
+    "start:dev": "concurrently \"yarn workspace backend start:dev\" \"yarn workspace frontend dev\"",
+    "start:prod": "concurrently \"yarn workspace backend start:prod\" \"yarn workspace frontend start\"",
+    "build": "yarn workspaces run build",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint"
+  },
+  "dependencies": {
+    "concurrently": "6.2.1"
+  }
+}

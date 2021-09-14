@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Block {
+  hash: String!
+  prev_block: String
+  height: Int!
+  time: Int!
+  block_index: Int!
+  size: Int
+}
+
+type Query {
+  block(hash: String!): Block
+  blocks: [Block!]!
+}
+
+type Subscription {
+  blocksAdded: [Block!]!
+}
